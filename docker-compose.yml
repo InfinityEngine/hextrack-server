@@ -1,0 +1,10 @@
+version: "2"
+services:
+  hextrack_db:
+    image: postgres:10
+    environment:
+      POSTGRES_USER: hexuser
+      POSTGRES_PASSWORD: hexpassword
+      POSTGRES_DB: hexdb
+    ports:
+      - "5437:5432"
