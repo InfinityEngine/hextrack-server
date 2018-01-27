@@ -58,6 +58,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hextrack.wsgi.application'
 
+# IoC Container Definitions
+
+HEXDI_STRATEGY = 'djhexdi.strategy.Static'
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 

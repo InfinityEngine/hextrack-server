@@ -4,17 +4,26 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def __merge_lists(base, settings, name):
+    if not base.get(name):
+        base[name] = []
+    items = settings.get(name, [])
+    for item in items:
+        if item not in base[name]:
+            base[name].append(item)
+
+
 def merge_installed_apps(base, settings):
-    if not base.get('INSTALLED_APPS'):
-        base['INSTALLED_APPS'] = []
-    apps = settings.get('INSTALLED_APPS', [])
-    for app in apps:
-        if app not in base['INSTALLED_APPS']:
-            base['INSTALLED_APPS'].append(app)
+    __merge_lists(base, settings, 'INSTALLED_APPS')
+
+
+def merge_hexdi_modules_list(base, settings):
+    __merge_lists(base, settings, 'HEXDI_MODULES_LIST')
 
 
 MANUAL_MERGE = {
-    'INSTALLED_APPS': merge_installed_apps
+    'INSTALLED_APPS': merge_installed_apps,
+    'HEXDI_MODULES_LIST': merge_hexdi_modules_list
 }
 
 
