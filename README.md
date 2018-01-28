@@ -2,6 +2,8 @@
 
 Time tracking system for individuals and companies. Server side.
 
+**application is on development**
+
 # Dev usage
 
 ## Requirements
