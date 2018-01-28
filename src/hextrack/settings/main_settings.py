@@ -46,6 +46,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'hextrack.commons.errors.error_handler',
+}
+
 ROOT_URLCONF = 'hextrack.urls'
 
 TEMPLATES = [
