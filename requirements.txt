@@ -1,5 +1,6 @@
 django==2.0.1
 djangorestframework==3.7.7
+django-api-commons==1.0.2
 django-hexdi==0.2.1
 typing==3.6.4
 psycopg2==2.7.3.2
